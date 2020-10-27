@@ -38,4 +38,20 @@ describe('Pruebas en <AddCategory />', () => {
 
     });
 
+    test('debe de llamar el setCategories y limpiar la caja de texto', () => {
+
+        const input = wrapper.find('input');
+        const value = 'One Punch';
+
+        input.simulate('change', { target: { value } });
+
+        wrapper.find('form').simulate('submit', { preventDefault(){} });
+
+        expect( setCategories ).toHaveBeenCalled();
+        expect( setCategories ).toHaveBeenCalledWith( expect.any(Function) );
+
+        expect(input.text()).toBe('');
+
+    })
+
 })
