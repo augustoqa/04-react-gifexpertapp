@@ -40,7 +40,7 @@ describe('Pruebas en <GifGrid />', () => {
         });
 
         const wrapper = shallow(<GifGrid category={category} />);
-        
+
         expect( wrapper.find('p').exists() ).toBe( false );
         expect( wrapper.find('GifGridItem').length).toBe( gifs.length );
 
